@@ -58,7 +58,7 @@ class HelpDesk {
       this.renderTickets();
     } catch (error) {
       console.error('Failed to load tickets:', error);
-      this.ticketsList.innerHTML = '<div class="error">Ошибка загрузки. Убедитесь, что сервер запущен на порту 7070</div>';
+      this.ticketsList.innerHTML = '<div class="error">Ошибка загрузки. Убедитесь, что сервер запущен на порту 7071</div>';
     } finally {
       this.hideLoader();
     }

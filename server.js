@@ -57,9 +57,12 @@ app.all('/', (req, res) => {
   console.log(`Получен запрос: method=${method}, id=${id}, body=`, req.body);
 
   switch (method) {
-    case "allTickets":
-      res.json(tickets);
+    case "allTickets": {
+      // Возвращаем тикеты без поля description согласно ТЗ
+      const ticketsWithoutDescription = tickets.map(({ description, ...ticket }) => ticket);
+      res.json(ticketsWithoutDescription);
       break;
+    }
 
     case "ticketById": {
       const ticket = tickets.find(t => t.id === id);
